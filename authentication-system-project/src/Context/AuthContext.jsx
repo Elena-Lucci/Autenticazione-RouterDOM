@@ -1,7 +1,6 @@
 import { createContext, useContext } from "react";
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import { useNavigate } from "react-router-dom";
 
 export const AuthContext = createContext();
 export const useAuth = () => useContext(AuthContext);
@@ -45,18 +44,12 @@ export function AuthProvider({ children }) {
     }
   }
 
-    function logout() {
-        setMessage("");
-        setUser(null);
-        localStorage.removeItem("user");
-        setMessage("Logout effettuato con successo");
-        navigate("/");
-    }
   function logout() {
     setMessage("");
     setUser(null);
     localStorage.removeItem("user");
     setMessage("Logout effettuato con successo");
+    navigate("/");
   }
 
   return (

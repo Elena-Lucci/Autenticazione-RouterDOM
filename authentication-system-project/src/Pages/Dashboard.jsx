@@ -13,7 +13,7 @@ import { useContext, useEffect } from "react";
 
 function Dashboard() {
   const { logout, user } = useContext(AuthContext);
-  const navigate = useNavigate()
+  const navigate = useNavigate();
   useEffect(() => {
     if (!user) {
       //Se non si è loggati, si viene renderizzati alla pagina Home (/)
@@ -25,11 +25,15 @@ function Dashboard() {
     // Dati dell'utente
     <div>
       <h1>Dashboard</h1>
-      <p>Nome:{user.name}</p>
+      <p>Nome:{user.nome}</p>
+      <br />
       <p>Email:{user.email}</p>
-      <p>Città:{user.city}</p>
-      <p>Professione:{user.profession}</p>
-      <button>Logout onClick={logout}</button>
+      <br />
+      <p>Città:{user.citta}</p>
+      <br />
+      <p>Professione:{user.professione}</p>
+      <br />
+      <button onClick={logout}>Logout</button>
       {/*Quando viene cliccato il pulsante logout, viene eseguita la funzione di logout da AuthContext.jsx*/}
     </div>
   );
