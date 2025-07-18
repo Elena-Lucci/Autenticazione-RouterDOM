@@ -45,11 +45,14 @@ function Registrazione() {
     }
     registrazione(formData);
     setFormData({
-      username: "",
       nome: "",
       cognome: "",
       email: "",
       password: "",
+      confermaPassword: "",
+      eta: "",
+      citta: "",
+      professione: "",
     }); // Reset dopo aver premuto il button
   }
   return (
@@ -117,14 +120,14 @@ function Registrazione() {
         <label>Citta'</label>
         <input type="text" name="citta" onChange={handleChange} required />
         <label>Professione</label>
-        <select required onChange={handleChange}>
+        <select name="professione" required onChange={handleChange}>
           <option value="Impiegato">Impiegato</option>
           <option value="Libero Professionista">Libero Professionista</option>
           <option value="Ditta individuale">Ditta individuale</option>
           <option value="Lavoratore Occasionale">Lavoratore Occasionale</option>
         </select>
         <button>Submit</button>
-        {error && <p>{error}</p>}
+        {error && <p style={{ color: "red", marginTop: "10px" }}>{error}</p>}
       </form>
     </>
   );
